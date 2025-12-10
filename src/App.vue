@@ -5,6 +5,10 @@
     <button @click="task = 'CounterApplication'" class="hbtn">Counter </button>
 
     <button @click="task = 'TodoList'" class="hbtn" >TodoList </button>
+
+    <button @click="task = 'Password'" class="hbtn" >Password </button>
+    
+    <button @click="task = 'TodoList'" class="hbtn" >Live Character Counter</button>
     <br>
     <br>
     <component :is = "task"></component>
@@ -12,28 +16,30 @@
 </template>
 <script>
 import CounterApplication from './components/CounterApplication.vue';
+import Password from './components/Password.vue';
 import TodoList from './components/TodoList.vue';
 
 export default{
   data(){
     return{
-      task: "CounterApplication"
+      task: "TodoList"
     };
   },
   components:{
     CounterApplication,
-    TodoList
+    TodoList,
+    Password
   }
 };
 </script>
 
 <style>
+
 .hbtn{
   margin-inline-start: 10px; 
   height: 35px; 
-  background-color:rgb(78, 226, 226);
-  
-  font-weight: bold;
-  font-size: 20px;
+  background-color:rgba(3, 88, 88, 0.445);
+  font-size: 18px;
 }
-</style> -->
+
+</style> 
