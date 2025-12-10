@@ -9,7 +9,10 @@
     <button @click="task = 'Password'" class="hbtn" >Password </button>
 
     <button @click="task = 'LivecharacterCount'" class="hbtn" >Live Character Counter</button>
+    
+    <button @click="task = 'RealTimeSearch'" class="hbtn" >Real Time Search Filter</button>
     <br>
+    
     <br>
     <component :is = "task"></component>
   </div>
@@ -18,7 +21,8 @@
 import CounterApplication from './components/CounterApplication.vue';
 import Password from './components/Password.vue';
 import TodoList from './components/TodoList.vue';
-import LivecharacterCount from './components/LivecharacterCount.vue'
+import LivecharacterCount from './components/LivecharacterCount.vue';
+import RealTimeSearch from './components/RealTimeSearch.vue';
 
 export default{
   data(){
@@ -30,7 +34,8 @@ export default{
     CounterApplication,
     TodoList,
     Password,
-    LivecharacterCount
+    LivecharacterCount,
+    RealTimeSearch
   }
 };
 </script>
@@ -42,6 +47,9 @@ export default{
   height: 35px; 
   background-color:rgba(3, 88, 88, 0.445);
   font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 </style> 

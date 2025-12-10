@@ -2,17 +2,10 @@
   <div class="container-div">
     <h2>Counter application</h2>
     <h1>{{ count }}</h1>
-    <button @click="count=0" style="margin-inline-start: 10px; height: 25px;">Reset</button>
-    <button @click="count++" style="margin-inline-start: 10px; height: 25px;">Increase</button>
 
-    <div style="margin-inline-start: 10px;" >
-      <div v-if="count<1">
-        <button disabled @click="count--" style="height: 25px;">Decrease</button>
-      </div>
-      <div v-else >
-        <button @click="count--" style="height: 25px;">Decrease</button>
-      </div>
-    </div>
+    <button @click="count++" class="actionbtn" >Increase</button>
+    <button :disabled = "count<1" @click="count--" class="actionbtn">Decrease</button>
+    <button @click="count=0" class="actionbtn">Reset</button>
     
   </div>
 </template>
@@ -35,5 +28,13 @@ export default {
   height: auto;
   margin: auto;
   padding: 50px;
+}
+
+.actionbtn{
+  margin-inline-start: 10px; 
+  height: 25px;
+    display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

@@ -17,6 +17,9 @@
         />
     </ul> -->
 
+    <h2>Real Time Search Filter</h2>
+
+    <input type="text" v-model="searchText" placeholder="Search items..." class="inputbox"/>
     <div class="table-container">
       <div class="table-header">
         <div class="table-cell">Checklist</div>
@@ -24,7 +27,7 @@
         <div class="table-cell">Action</div>
         <div class="table-cell">Action</div>
       </div>
-      <div class="table-row" v-for="(task, index) in tasks" :key="index">
+      <div class="table-row" v-for="(task, index) in searchlist" :key="index">
         <div class="table-cell">
           <input type="checkbox" v-model="task.completed" />
         </div>
@@ -79,8 +82,17 @@ export default{
     return{
         newTask: "",
         tasks: [],
+        searchText:"",
     };
   },
+
+  computed: {
+            searchlist() {
+              return this.tasks.filter((item) =>
+                item.name.toLowerCase().includes(this.searchText.toLowerCase())
+              );
+            },
+        },
 
   methods:{
     AddTask(){
